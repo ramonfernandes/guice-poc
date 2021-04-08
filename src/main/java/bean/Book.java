@@ -1,6 +1,6 @@
 package bean;
 
-public class Book {
+public class Book extends Interface {
 
   public Book() {
   }

@@ -2,13 +2,18 @@ package conf;
 
 
 import bean.Book;
+import bean.Car;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
 
 public class Service extends BasicModule {
 
-  public Service() {
+  private Car car;
+
+  @Inject
+  public Service(Car car) {
+    this.car = car;
   }
 
   public void use() {
@@ -16,6 +21,7 @@ public class Service extends BasicModule {
     Book book = injector.getInstance(Book.class);
 
     book.use();
+    car.use();
   }
 
 }
